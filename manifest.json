@@ -3,7 +3,7 @@
   "name": "Quidnunc PWA",
   "icons": [
     {
-      "src": "assets/qH4N64WJXM/imageonly-the-quidnunc-logos_transparent-1200x1200-hpn-854x589.webp",
+      "src": "assets/logoPWA.png",
       "type": "image/webp",
       "sizes": "1200x1200"
     }
