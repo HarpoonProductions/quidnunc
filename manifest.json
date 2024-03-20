@@ -5,7 +5,7 @@
     {
       "src": "assets/logoPWA.png",
       "type": "image/png",
-      "sizes": "854x589",
+      "sizes": "512x512",
       "purpose": "any maskable"
     }
   ],
