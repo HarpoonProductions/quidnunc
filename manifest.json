@@ -4,8 +4,9 @@
   "icons": [
     {
       "src": "assets/logoPWA.png",
-      "type": "image/webp",
-      "sizes": "1200x1200"
+      "type": "image/png",
+      "sizes": "854x589",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "/quidnunc/",
