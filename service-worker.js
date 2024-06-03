@@ -1,4 +1,4 @@
-const CACHE_NAME = "quidnunc-v1.1";
+const CACHE_NAME = "quidnunc-v1.2";
 const urlsToCache = [
   "/quidnunc/about-the-quidnunc/article.html",
   "/quidnunc/about-the-quidnunc/assets/GQ0tJuc8tw/the-quidnunc-logos_white-1200x1200.png",
