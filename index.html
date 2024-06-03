@@ -98,13 +98,18 @@
       document.addEventListener("DOMContentLoaded", function () {
         let installPromptEvent;
 
-        if (
-          !window.matchMedia("(display-mode: standalone)").matches &&
-          !navigator.standalone
-        ) {
+        console.log("loaded");
+
+        // Check if it's likely in standalone mode or not
+        const isStandalone =
+          window.matchMedia("(display-mode: standalone)").matches ||
+          window.navigator.standalone ||
+          document.referrer.includes("android-app://");
+
+        if (!isStandalone) {
           console.log("standalone");
           window.addEventListener("beforeinstallprompt", (e) => {
-            console.log('before install')
+            console.log("before install");
             e.preventDefault(); // Prevent the default install prompt
             installPromptEvent = e; // Stash the event to trigger later
             showModal();
