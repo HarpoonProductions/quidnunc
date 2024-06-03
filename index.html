@@ -18,7 +18,7 @@
         background: rgba(0, 0, 0, 0.8);
         justify-content: center;
         align-items: center;
-        z-index: 1000;
+        z-index: 10000;
         opacity: 0;
         transition: opacity 0.5s;
       }
@@ -98,9 +98,13 @@
       document.addEventListener("DOMContentLoaded", function () {
         let installPromptEvent;
 
-        if (!window.matchMedia('(display-mode: standalone)').matches && !navigator.standalone) {
-          // Listen for the beforeinstallprompt event only in browser mode
+        if (
+          !window.matchMedia("(display-mode: standalone)").matches &&
+          !navigator.standalone
+        ) {
+          console.log("standalone");
           window.addEventListener("beforeinstallprompt", (e) => {
+            console.log('before install')
             e.preventDefault(); // Prevent the default install prompt
             installPromptEvent = e; // Stash the event to trigger later
             showModal();
