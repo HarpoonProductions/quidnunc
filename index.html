@@ -106,14 +106,21 @@
           window.navigator.standalone ||
           document.referrer.includes("android-app://");
 
+        const isIOS =
+          /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
         if (!isStandalone) {
           console.log("standalone");
-          window.addEventListener("beforeinstallprompt", (e) => {
-            console.log("before install");
-            e.preventDefault(); // Prevent the default install prompt
-            installPromptEvent = e; // Stash the event to trigger later
+          if (isIOS) {
             showModal();
-          });
+          } else {
+            window.addEventListener("beforeinstallprompt", (e) => {
+              console.log("before install");
+              e.preventDefault(); // Prevent the default install prompt
+              installPromptEvent = e; // Stash the event to trigger later
+              showModal();
+            });
+          }
         }
 
         document
